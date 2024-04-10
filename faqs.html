@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <title>Travel Ease | FAQs</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <section class="navbar">
+      <a href="index.html"><img src="logo.png" alt="Logo" class="logo">
+        <h4>Travel Ease</h4>
+      </a> 
+      <div class="navbar-buttons">
+        <button class="signup" onclick="window.location.href='signup.html'">Sign up</button>
+        <button class="login" onclick="window.location.href='login.html'">Log in</button>
+      </div>
+    </section>
+
+      <!-- footer section -->
+      <footer class="footer-container">
+        <div class="footer-left">
+          <h3>Travel Ease &reg;</h3>
+          <p class="footer-links">
+            <a href="about.html">About</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="faqs.html">FAQs</a>
+            <a href="help.html">Help Center</a>
+          </p>
+          <p class="footer-company-name">&copy; 2024 Travel Ease Inc. All rights reserved.</p>
+        </div>
+
+        <div class="footer-center">
+          <div>
+            <i class="fa-solid fa-location-dot"></i>
+            <p><span>Okavango Heritage Highway</span> Gaborone, Botswana</p>
+          </div>
+          <div>
+            <i class="fa-solid fa-phone"></i>
+            <p>+267 39 876 543</p>
+          </div>
+          <div>
+            <i class="fa-solid fa-envelope"></i>
+            <p><a href="mailto:cse22-thuto.bac.ac.bw">support@travelease.com</a></p>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <p class="footer-company-about">
+            <span>About the company</span>
+            Exploring Gaborone's finest, blending luxury, nature, hospitality for unforgettable stays in vibrant cityscapes and serene wilderness.
+          </p>
+          <div class="footer-icons">
+            <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.pinterest.com" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+          </div>
+        </div>
+      </footer>
+
+<script>
+  const toggles = document.querySelectorAll(".faq-toggle");
+
+toggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    toggle.parentElement.classList.toggle("active");
+  });
+});
+
+</script>
+</body>
+</html>

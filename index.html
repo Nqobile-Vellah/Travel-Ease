@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="shortcut icon" href="logo.png" type="image/x-icon">
+<title>Travel Ease</title>
+</head>
+<body>    
+  <!-- Navbar -->
+  <section class="navbar">
+    <a href="index.html"><img src="logo.png" alt="Logo" class="logo">
+      <h4>Travel Ease</h4>
+    </a> 
+    <div class="navbar-buttons">
+      <button class="signup" onclick="window.location.href='signup.html'">Sign up</button>
+      <button class="login" onclick="window.location.href='login.html'">Log in</button>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Where Adventure Begins</h1>
+      <p style="font-size: 16px; font-weight: 400; text-shadow: #000 2px 2px 2px; padding: 0px 50px 0px 5px;">
+        Explore Gaborone's premier accommodations with Travel Ease. Our curated collection blends luxury, nature, and hospitality, offering unforgettable stays in vibrant cityscapes and serene wilderness. Discover hotels, resorts, guesthouses, and apartments for an extraordinary living experience.      
+      </p>
+      <div class="hotel-reservation">
+        <div class="reservation-field">
+          <i class='bx bx-search'></i>
+          <input type="text" name="location" class="input-box" id="location" placeholder="Search" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="reservation-field">
+          <i class="fa-solid fa-door-open"></i>
+          <input type="text" name="check-in-out" class="input-box" id="check-in-out" placeholder="Check-In / Check-Out" data-input>
+          <i class='bx bx-chevron-down' style="position: absolute; left: 310px; font-size: 24px;"></i>
+        </div>
+        <div class="reservation-field">
+          <i class='bx bx-user'></i>
+          <div class="input-box" id="guests">Guests</div>
+          <i class='bx bx-chevron-down' style="position: absolute; left: 310px; font-size: 24px;"></i>
+          <div class="guests-popup" id="guestsPopup">
+            <div class="guests-category">
+              <span class="category-label">Adults</span>
+              <div class="counter-buttons">
+                <button id="adultsMinus" class="counter-button disabled">-</button>
+                <span class="counter-value" id="adultsCount"></span>
+                <button id="adultsPlus" class="counter-button">+</button>
+              </div>
+            </div>
+            <div class="guests-category">
+              <span class="category-label">Rooms</span>
+              <div class="counter-buttons">
+                <button id="roomsMinus" class="counter-button disabled">-</button>
+                <span class="counter-value" id="roomsCount"></span>
+                <button id="roomsPlus" class="counter-button">+</button>
+              </div>
+            </div>
+            <div class="guests-category">
+              <span class="category-label">Children</span>
+              <div class="counter-buttons">
+                <button id="childrenMinus" class="counter-button disabled">-</button>
+                <span class="counter-value" id="childrenCount"></span>
+                <button id="childrenPlus" class="counter-button">+</button>
+              </div>
+            </div>        
+          </div>
+        </div>    
+      </div>        
+      <button class="search-button" onclick="searchHotels()">Search</button>
+    </div>      
+  </section>
+
+  <!-- Recommended Stays -->
+  <div class="category">
+    <h2>Our Recommended</h2>
+    <a href="#">Show all</a>
+  </div>
+
+  <section class="cards-container">
+    <div class="card-hotel">
+      <a href="#">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/166132978.jpg?k=1a7d1dd35a4f211b4c90bfd69338b10cbe81ac66a729b35aa0cfdaf135aedde3&o=&hp=1" alt="Hotel 1">
+      </a>        
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/The+Big+Five+Lodge/@-24.6261286,25.8533575,17z/data=!3m1!4b1!4m10!3m9!1s0x1ebb5aa91234b37b:0xf2e113cf4f8c62ea!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.6261286!4d25.8559324!16s%2Fg%2F11dymb7wrk?entry=ttu" target="_blank">Plot 807-815, Mogoditshane</a></p>
+        <h3 class="card-title"><a href="#">The Big Five Lodge</a></h3>
+        <p class="card-info">Bedrooms: 2 • Bathrooms: 1</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+        <p class="price">Starting from: <span>BWP 950.00</span></p>
+      </div>
+    </div>
+    <div class="card-hotel">
+      <a href="#">
+        <img src="https://images.trvl-media.com/lodging/19000000/18190000/18185000/18184927/429c2ca6.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Hotel 2">
+      </a>      
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/room50two/@-24.6484346,25.9030906,17z/data=!3m1!4b1!4m10!3m9!1s0x1ebb5b06b4de8865:0xdbde2fe764531e16!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.6484346!4d25.9056655!16s%2Fg%2F11gbfdhjl0?entry=ttu" target="_blank">Western Commercial Rd, iTowers CBD</a></p>
+        <h3 class="card-title"><a href="#">Room 50 Two</a></h3>
+        <p class="card-info">Bedrooms: 2 • Bathrooms: 1</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
+        <p class="price">Starting from: <span>BWP 1 500.00</span></p>
+      </div>
+    </div>
+    <div class="card-hotel">
+      <a href="#">
+        <img src="https://static.readytotrip.com/upload/information_system_24/3/6/8/item_3684711/information_items_3684711.jpg" alt="Hotel 3">
+      </a>
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/Grand+Aria+Hotels+and+Conference+Centre/@-24.6374723,25.891983,17z/data=!3m1!4b1!4m10!3m9!1s0x1ebb5bad7d6daa51:0x11824eb337fcbd5c!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.6374723!4d25.8945579!16s%2Fg%2F11h_7xp2mx?entry=ttu" target="_blank">Plot 32943, Phase 2</a></p>
+        <h3 class="card-title"><a href="#">The Grand Aria Hotel </a></h3>
+        <p class="card-info">Bedrooms: 1 • Bathrooms: 1</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+        <p class="price">Starting from: <span>BWP 2 400.00</span></p>
+      </div>
+    </div>
+
+    <div class="card-hotel">
+     <a href="#">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipPC-_halAz_uu12LV7sHeM6B8Ud0pZmxEC1dojP=s1360-w1360-h1020" alt="Hotel 4">
+     </a> 
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/The+Melva+Elegant+Guest+House/@-24.6052828,25.8963,17z/data=!3m1!4b1!4m10!3m9!1s0x1ebb453ad27c76ab:0x95280c3bc67f7774!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.6052828!4d25.8988749!16s%2Fg%2F11f9gl15x6?entry=ttu" target="_blank">Plot 34912, Gabamutsha</a></p>
+        <h3 class="card-title"><a href="#">Melva Elegant Guest House</a></h3>
+        <p class="card-info">Bedrooms: 6 • Bathrooms: 4</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
+        <p class="price">Starting from: <span>BWP 1 200.00</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="top-values">
+    <h1>Top values for you</h1>
+    <p>Try variety of features that we offer</p>
+  </section>
+
+  <section class="features">
+    <div class="features-card">
+      <i class="fa-regular fa-paper-plane"></i>      
+      <h2>Airport Pickup</h2>
+      <p>Experience hassle-free arrivals with our premium Airport Pickup service.</p>
+    </div>
+    <div class="features-card">
+      <i class="fa-solid fa-book-bookmark"></i>
+      <h2>Easy Booking</h2>
+      <p>Easily book your next trip with our easy-to-use booking system.</p>
+    </div>
+    <div class="features-card">
+      <i class="fa-solid fa-people-group"></i>
+      <h2>Best Tour Guides</h2>
+      <p>We have the best tour guides with years of experience.</p>
+    </div>
+    <div class="features-card">
+      <i class="fa-solid fa-piggy-bank"></i>
+      <h2>Lots of Promos</h2>
+      <p>Get discounts on your next trip with our promotions.</p>
+    </div>
+  </section>
+ 
+  <!--Promotions-->
+ <div class="category">
+    <h2>Destinations on Promo</h2>
+    <a href="#">Show all</a>
+  </div>
+
+  <section class="cards-container">
+    <div class="card-hotel">
+      <a href="#">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/256438135.jpg?k=bf71b3143fc0e9ab2978d773f38e113820151b09c4eb71ff3f6ef2c895317120&o=&hp=1" alt="Hotel 1">
+      </a>
+      <h5 class="sale">Save 40%</h5>
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/Town+Lodge+Gaborone/@-24.6062823,25.9264366,17z/data=!3m1!4b1!4m10!3m9!1s0x1ebb5b4ca042c53b:0x7bafe3c44ff0d6b2!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.6062823!4d25.9290115!16s%2Fg%2F1hf6_xvk5?entry=ttu" target="_blank">Corner Airport & A1 Roads</a></p>
+        <h3 class="card-title"><a href="#">Town Lodge</a></h3>
+        <p class="card-info">Bedrooms: 4 • Bathrooms: 2</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+          <div class="price">
+            <del class="old-price">BWP 4 000.00</del>
+            <span class="sale-price">BWP 2 400.00</span><span class="per-night">/per night</span>
+          </div>
+      </div>
+    </div>
+
+    <div class="card-hotel">
+      <a href="#">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/474437122.jpg?k=9faa372717c07410fbf260208fedb789ae3ec64e501ce3a8fb2dfa12a443a384&o=&hp=1" alt="Hotel 2">
+      </a>      
+      <h5 class="sale">Save 35%</h5>
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/Hilton+Garden+Inn+Gaborone/@-24.6478437,25.902189,17z/data=!3m1!4b1!4m10!3m9!1s0x1ebb5b03ddce6dff:0x483a545b29e242e2!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.6478437!4d25.9047639!16s%2Fg%2F11g0w1n9tq?entry=ttu" target="_blank">Western Commercial Rd, Gaborone</a></p>
+        <h3 class="card-title"><a href="#">Hilton Garden Inn</a></h3>
+        <p class="card-info">Bedrooms: 1 • Bathrooms: 1</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
+        <div class="price">
+          <del class="old-price">BWP 1 900.00</del>
+          <span class="sale-price">BWP 1 235.00 </span><span class="per-night">/per night</span> 
+        </div>
+      </div>
+    </div>
+
+    <div class="card-hotel">
+      <a href="#">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/0c/cc/13/entrance-to-the-resort.jpg?w=1100&h=-1&s=1" alt="Hotel 3">
+      </a>
+      <h5 class="sale">Save 25%</h5>
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/Avani+Gaborone+Resort+%26+Casino/@-24.6514719,25.927552,17z/data=!3m1!4b1!4m10!3m9!1s0x1ebb5b9c0142ad09:0xc7b43239a403bafc!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.6514719!4d25.9301269!16s%2Fg%2F1tctp1m6?entry=ttu" target="_blank">4727 Chuma Dr, Gaborone</a></p>
+        <h3 class="card-title"><a href="#">Avani Resort & Casino</a></h3>
+        <p class="card-info">Bedrooms: 2 • Bathrooms: 1</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+        <div class="price">
+          <del class="old-price">BWP 2 052.00</del>
+          <span class="sale-price">BWP 1 950.00 </span><span class="per-night">/per night</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-hotel">
+     <a href="#">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/a2/84/42/masa-square-hotel.jpg?w=700&h=-1&s=1" alt="Hotel 4">
+     </a> 
+     <h5 class="sale">Save 25%</h5>
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/Protea+by+Marriott+Hotel+Gaborone+Masa+Square/@-24.6525343,25.9012351,17z/data=!3m2!4b1!5s0x1ebb5b00bf98b89d:0x4acd75d1f800942f!4m10!3m9!1s0x1ebb5b00eadf83f3:0xe17d88c9ddc6cba2!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.6525343!4d25.90381!16s%2Fg%2F11cfhlwsh?entry=ttu" target="_blank">CBD Cnr 1st &, Western Commercial Rd</a></p>
+        <h3 class="card-title"><a href="#">Masa Square Hotel</a></h3>
+        <p class="card-info">Bedrooms: 1 • Bathrooms: 1</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+        <div class="price">
+          <del class="old-price">BWP 1 800.00</del>
+          <span class="sale-price">BWP 1 350.00 </span><span class="per-night">/per night</span> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="category">
+    <h2>Attractions, activities and experiences</h2>
+    <a href="#">Show all</a>
+  </div>
+
+  <section class="cards-container">
+    <div class="card">
+      <a href="#">
+        <img src="https://yourbotswana.com/wp-content/uploads/2017/01/yb-kgale-hill.png" alt="Kgale Hill" style="width: 100%; height: 100%; object-fit: cover;">
+        <h3 class="city">kgale hill</h3>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="#">
+        <img src="https://www.tourismupdate.co.za/sites/default/files/images/article/201808/gaborone-game-reserve-closes-indefinitely.jpg" alt="Gaborone Game Reserve">
+        <h3 class="city">Gaborone Game Reserve</h3>
+      </a>
+
+    </div>
+    <div class="card">
+      <a href="#">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipPI1nPwwKBcHA91gTxBCbBmjqsKpr9hUbFDjZQ-=s1360-w1360-h1020" alt="The Three Dikgosi Monument">
+        <h3 class="city">the three dikgosi monument</h3>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="#">
+        <img src="https://www.sundaystandard.info/wp-content/uploads/2015/08/illegal.jpg" alt="Gaborone Dam">
+        <h3 class="city">Gaborone Dam</h3>
+      </a>
+    </div>
+  </section> 
+
+  <!-- Exploring Gaborone -->
+  <div class="category">
+    <h2>Explore Gaborone</h2>
+    <a href="#">Show all</a>
+  </div>
+
+  <section class="cards-container">
+    <div class="card">
+      <a href="#">
+        <img src="https://maps.prodafrica.com/wp-content/uploads/2016/08/273_588884817.jpg" alt="cbd" style="width: 100%; height: 100%; object-fit: cover;">
+        <h3 class="city">cbd</h3>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="#">
+        <img src="https://www.kayak.co.uk/rimg/himg/b4/97/55/ostrovok-201899-64ed0f-378622.jpg?width=1366&height=768&crop=true" alt="phakalane">
+        <h3 class="city">phakalane</h3>
+      </a>
+
+    </div>
+    <div class="card">
+      <a href="#">
+        <img src="https://lh5.googleusercontent.com/proxy/-JZ0BY4EFWXWFmvtCbEor8adOZ8ntJzIh6Y4QR9151QAfkF36TuOn75_CjskkH3Kwcoa79bxY4a482LLKY2Ake2_6AvrCyHw2DopI7S9lRNPRXn0oUZVaBE" alt="G-north">
+        <h3 class="city">Gaborone north</h3>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="#">
+        <img src="https://images.squarespace-cdn.com/content/v1/6038e4ec0d38f30ce48e2204/1647451887377-AFXZO13JDS8TPGO0Z3JW/unsplash-image-OjmO-dNF0lQ.jpg" alt="Broadhurst">
+        <h3 class="city">Broadhurst</h3>
+      </a>
+    </div>
+  </section> 
+
+  <!-- Recommended Stays -->
+  <div class="category">
+    <h2>Affordable Stays in Gaborone</h2>
+    <a href="#">Show all</a>
+  </div>
+
+  <section class="cards-container">
+    <div class="card-hotel">
+      <a href="#">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/213150940.jpg?k=f52385aea16673e4ab597c422cadc6b9b09fedec941e7cd45320f1db4b3937bd&o=&hp=1" alt="Hotel 1">
+      </a>        
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/Triple+Palms+Bed+and+Breakfast/@-24.6021775,25.8993284,17z/data=!3m1!4b1!4m10!3m9!1s0x1ebb4564efd8d17b:0xeee62b17ff06ebd5!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.6021775!4d25.9019033!16s%2Fg%2F11hzwbs4_v?entry=ttu" target="_blank">Plot 34840 Cnr Gquo Crescent, Block 8</a></p>
+        <h3 class="card-title"><a href="#">Triple Palms Bed and Breakfast</a></h3>
+        <p class="card-info">Bedrooms: 4 • Bathrooms: 3</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+        <p class="price">Starting from: <span>BWP 381.00</span></p>
+      </div>
+    </div>
+    <div class="card-hotel">
+      <a href="#">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/346011399.jpg?k=4c91e5ceb95a0959d42fbb1870334899307e7f281481e29853304fbaebc6c076&o=&hp=1alt=" alt="Hotel 2">
+      </a>      
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/Carlcyn+Homestay/@-24.5584985,25.9871705,17z/data=!3m1!4b1!4m10!3m9!1s0x1ebb4380bb0e26fd:0x4269c45cb4c7b855!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.5584985!4d25.9897454!16s%2Fg%2F11tj3r9m26?entry=ttu" target="_blank">Plot 55279 Sesakwe Lane, Phakalane</a></p>
+        <h3 class="card-title"><a href="#">Carlcyn Homestay</a></h3>
+        <p class="card-info">Bedrooms: 4 • Bathrooms: 4</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
+        <p class="price">Starting from: <span>BWP 350.00</span></p>
+      </div>
+    </div>
+    <div class="card-hotel">
+      <a href="#">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/434187092.jpg?k=4e909c094c1aa338e55151b4177fee254c83e3ab504c9127beb2b62c8d2b7393&o=&hp=1" alt="Hotel 3">
+      </a>
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/Tlokweng+Rose+Garden/@-24.6904086,25.9635872,17z/data=!4m23!1m12!3m11!1s0x1ebb5f9e50aeb27d:0x61a87fda06d170d0!2sTlokweng+Rose+Garden!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.690477!4d25.963432!10e5!16s%2Fg%2F11sgvzndv9!3m9!1s0x1ebb5f9e50aeb27d:0x61a87fda06d170d0!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.690477!4d25.963432!16s%2Fg%2F11sgvzndv9?entry=ttu" target="_blank">Plot 4457 Sefoke Ward, Tlokweng</a></p>
+        <h3 class="card-title"><a href="#">Rose Garden Guest House</a></h3>
+        <p class="card-info">Bedrooms: 3 • Bathrooms: 3</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+        <p class="price">Starting from: <span>BWP 378.00</span></p>
+      </div>
+    </div>
+
+    <div class="card-hotel">
+     <a href="#">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/02/6a/21/executive-rondavel.jpg?w=1000&h=-1&s=1" alt="Hotel 4">
+     </a> 
+      <div class="card-details">        
+        <p class="address"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/Mokolodi+Backpackers+(Gaborone+-+Botswana)/@-24.7406,25.8256251,17z/data=!3m1!4b1!4m10!3m9!1s0x1ebb571349b484f3:0xf525da59f69e87b3!5m3!1s2024-05-07!4m1!1i2!8m2!3d-24.7406!4d25.8282!16s%2Fg%2F1tzvyv52?hl=en-GB&entry=ttu" target="_blank">Plot 86 Mokolodi, Gaborone</a></p>
+        <h3 class="card-title"><a href="#">Mokolodi Backpackers</a></h3>
+        <p class="card-info">Bedrooms: 2 • Bathrooms: 2</p>
+        <p class="card-info">Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+        <p class="price">Starting from: <span>BWP 363.00</span></p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Property Types -->
+  <div class="category">
+    <h2>Browse by property type</h2>
+    <a href="#">Show all</a>
+  </div>
+
+  <section class="cards-container">
+    <div class="card">
+      <a href="#">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/122962777.jpg?k=c66b991ab38afea2fdfc21a69fe00bee9f398cae7c4e4c20968fe598a8dda239&o=&hp=1" alt="hotels">
+        <h3 class="city">Hotels</h3>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="#">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/305338696.jpg?k=d65aacd7a791b0c6d58411ece47ea6cfed3d400849054a595cfa7e3d988ec1c4&o=&hp=1" alt="apartments">
+        <h3 class="city">Apartments</h3>
+      </a>
+
+    </div>
+    <div class="card">
+      <a href="#">
+        <img src="https://i.pinimg.com/originals/76/ba/9a/76ba9a70fcc45c38f438f6e0b16e6b5f.jpg" alt="Guesthouses">
+        <h3 class="city">Guesthouses</h3>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="#">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/121735986.jpg?k=d9a8776bdbb1812b510bb533b36024e911872bbc161dca54a50cb951c7071437&o=&hp=1" alt="Resorts">
+        <h3 class="city">Resorts</h3>
+      </a>
+    </div>
+  </section> 
+  
+  <section class="learn-more">
+    <h1>Discover the hype with Travel Ease</h1>
+    <button><a href="about.html">Learn More</a></button>
+  </section>
+
+  <footer class="footer-container">
+  
+    <div class="footer-left">
+
+      <h3>Travel Ease &reg;</h3>
+
+      <p class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="help.html">Help Center</a>
+      </p>
+
+      <p class="footer-company-name">&copy; 2024 Travel Ease Inc. All rights reserved.</p>
+    </div>
+
+    <div class="footer-center">
+      <div>
+        <i class="fa-solid fa-location-dot"></i>
+        <p><span>Okavango Heritage Highway</span> Gaborone, Botswana</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-phone"></i>
+        <p>+267 39 876 543</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-envelope"></i>
+        <p><a href="mailto:cse22-thuto.bac.ac.bw">support@travelease.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Exploring Gaborone's finest, blending luxury, nature, hospitality for unforgettable stays in vibrant cityscapes and serene wilderness.
+      </p>
+      <div class="footer-icons">
+        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.pinterest.com" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

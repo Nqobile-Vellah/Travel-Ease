@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="app.js"></script>
+  <script type="module" src="register.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">  
+  <link rel="stylesheet" href="style.css">
+  <title>Log In | Travel Ease</title><style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  user-select: none;
+  overflow: hidden;
+}
+
+    body {
+      background-image: url(https://static.vecteezy.com/system/resources/previews/007/215/426/original/green-nature-landscape-and-blue-sky-field-and-meadow-hills-and-grass-park-or-outdoor-golf-courses-summer-background-garden-or-turf-farm-and-countryside-scenery-cartoon-illustration-wallpaper-free-vector.jpg);
+      background-size: cover;
+      padding: 10px 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      height: 690px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      margin-left: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 20px 0 20px 0; 
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .password-input {
+      position: relative;
+    }
+
+    .password-input input {
+      padding-right: 40px;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .toggle-password i {
+      color: #777;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0069d9;
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .small-text {
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
+    .small-text a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .small-text a:hover {
+      text-decoration: underline;
+    }
+
+    .social-btn {
+      display: block;
+      width: 100%;
+      padding: 10px 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: transparent;
+      border: #777 1px solid;
+      color: #000;
+      border-radius: 3px;
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .social-btn:hover {
+      outline: #000 1px solid;
+    }
+
+    .social-btn img {
+      margin-right: 5px;
+      margin-top: 5px;
+      height: 30px;
+      width: 30px;
+    }
+
+    .social-btn span {
+      margin-top: 10px;
+    }
+
+    .close-button {
+  position: relative;
+  left: 90%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #777;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.close-button:hover {
+  text-decoration: underline;
+  color: #000;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="close-button" onclick="window.location.href = 'index.html'">Close</button>
+    <h2>Log In to your account</h2>
+    <button class="social-btn"><img src="https://static.vecteezy.com/system/resources/previews/013/948/549/original/google-logo-on-transparent-white-background-free-vector.jpg" alt="google"> <span>Log In with Google</span></button>
+    <button class="social-btn"><img src="https://static.vecteezy.com/system/resources/previews/023/986/613/non_2x/facebook-logo-facebook-logo-transparent-facebook-icon-transparent-free-free-png.png" alt="facebook"> <span>Log In with Facebook</span></button>
+    <p class="small-text">or use your email to log in:</p>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="name@domain.com" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="password-input">
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <span class="toggle-password"><i class="fas fa-eye"></i></span>
+      </div>
+    </div>
+    <p class="small-text">Forgot your password? <a href="#">Reset</a></p>
+    <button type="submit" class="btn">Log In</button>
+    <p class="small-text">Don't have an account? <a href="signup.html">Sign up here</a></p>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const togglePassword = document.querySelectorAll(".toggle-password");
+
+      togglePassword.forEach(function(item) {
+        item.addEventListener("click", function() {
+          const passwordInput = this.previousElementSibling;
+          const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+          passwordInput.setAttribute("type", type);
+          this.querySelector("i").classList.toggle("fa-eye-slash");
+          this.querySelector("i").classList.toggle("fa-eye");
+        });
+      });
+    });
+  </script>
+</body>
+</html>
